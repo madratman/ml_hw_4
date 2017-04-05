@@ -17,7 +17,7 @@ for idx in range(3):
 # (x1,x2), (x3,x4), (x4,x5)
 dims_list = [(1,2), (3,4), (4,5)]
 plot_lims = 10
-for dims in dims_list:
+for (ctr,dims) in enumerate(dims_list):
 	plt.figure()
 	for idx in range(3):
 		plt.scatter(x_input[y_pred==idx,dims[0]-1], x_input[y_pred==idx,dims[1]-1], .8, color=color_list[idx])
@@ -26,6 +26,4 @@ for dims in dims_list:
 		plt.xticks(range(-plot_lims, plot_lims, 1))
 		plt.yticks(range(-plot_lims, plot_lims, 1))
 		plt.title("dims x{} and x{}".format(dims[0], dims[1]))
-
-plt.show()
-
+	plt.savefig('plot_{}.png'.format(ctr))

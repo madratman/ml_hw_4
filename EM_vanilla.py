@@ -26,7 +26,7 @@ while error > 0.001:
 			mu_curr[j] = mu_curr[j] + prob_y_given_x[j,i]*X[i]
 		mu_curr[j] = mu_curr[j]/sum(prob_y_given_x[j,:])
 
-	error = np.linalg.norm(mu_curr - mu_prev)
+	error = np.linalg.norm(mu_curr-mu_prev)
 	mu_prev = mu_curr
 
 for idx in range(3):
